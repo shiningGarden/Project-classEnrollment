@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%block content%}
+<h3>회원가입</h3>
+
+<form action="{%url 'signup'%}" style="width: 50%; margin: 50px auto 100px auto; text-align: left;" method="POST">
+    {%csrf_token%}
+    <div class="form-group">
+        <label for="exampleFormControlInput1">아이디 (Username)</label>
+        <input type="username" class="form-control" id="exampleFormControlInput1" placeholder="username" name="username">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">비밀번호 (Password)</label>
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="********" name="password1">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">비밀번호 확인 (Confirm Password)</label>
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="********" name="password2"
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">이름 (Name)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="홍길동" name="name">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">학번 (Student No.)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="202000123" name="std_num">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">전공</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="major">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <br>
+    <div style="text-align: center !important;">
+        <input type="submit" value="회원가입" class="submit-button" style="float:none !important; height: 38px;">
+    </div>
+    
+</form>
+{%endblock%}

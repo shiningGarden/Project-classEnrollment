@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block content%}
+{% load static %}
+<!-- <h1 style="font-size: 2.5rem;">한국외국어대학교<br>강의포털</h1> -->
+<img src="{%static 'hufs.gif'%}" alt="HUFS LOGO">
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container" style="display: block;">
+<form action="{% url 'home' %}" method="POST">
+    <div class="input-group mb-3" style="display: inline block;">
+        {% csrf_token %}
+        <input type="text" class="form-control" name="textarea" placeholder="강의명 / 교수로 찾기" aria-label="강의명 / 교수로 찾기"
+            aria-describedby="button-addon2" style="background-color: #fafafa !important; width: 40%; height: 3rem !important;">
+        <div class="input-group-append">
+            <input class="btn btn-outline-secondary" type="submit" id="button-addon2" value="검색하기">
+        </div>
+</form>
+</div>
+<br>
+<ol class="list-group list-group-flush" style="text-align: left;">
+    {% for i in lecture %}
+    <div class="post-block">
+        <a href="{%url 'ratings' i.id%}" class="activated">
+            <li class="list-group-item">
+                <span class="post-title">{{i.subject}}</span>
+                <br>
+                <span class="post-body">{{i.professor}} ({{i.dept}})</span>
+            </li>
+        </a>
+    </div>
+    {% endfor %}
+</ol>
+<br>
+</div>
+{%endblock%}

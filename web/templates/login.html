@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block content%}
+<h3>로그인</h3>
+
+<form action="{%url 'login'%}" style="width: 50%; margin: 50px auto 100px auto; text-align: left;" method="POST">
+    {%csrf_token%}
+    <div class="form-group">
+        <label for="exampleFormControlInput1">아이디 (Username)</label>
+        <input type="username" class="form-control" id="exampleFormControlInput1" placeholder="username"
+            name="username">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">비밀번호 (Password)</label>
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="********"
+            name="password">
+    </div>
+        <br>
+        <div style="text-align: center !important;"><input type="submit" value="로그인" class="submit-button"
+                style="float:none !important; height: 38px;"></div>
+
+</form>
+{%endblock%}

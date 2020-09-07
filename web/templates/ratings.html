@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block content%}
+<h3>{{lecture.subject}}</h3>
+<p class="card-subtitle mb-2 text-muted">{{lecture.rq_year}}년도 {{lecture.rq_semester}}학기</p>
+<br>
+<a href="{{lecture.url}}"><input type="button" value="강의계획서" class="submit-button" style="float:none !important; height: 38px;"></a>
+<br>
+<br>
+<br>
+<div class="card" style="width: 100%; text-align: left;">
+    <div class="card-body">
+        <p class="card-subtitle mb-2 text-muted" >{{lecture.dept}} [{{lecture.area}}]</p>
+        <h5 class="card-title">{{lecture.professor}} 교수</h5>
+        <br>
+        <p>{{lecture.class_time}} ({{lecture.credit}}학점)</p>
+        <h6 style="color: coral;">{{lecture.note}}</h6>
+    </div>
+</div>
+<br>
+<br>
+<h6 style="float: left; color:;">강의평 작성하기</h6>
+<form action="" method="POST">
+    <div class="form-group" style="display: inline;">
+        <label for="exampleFormControlInput1"></label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="한 줄 평" name="review">
+        <br>
+        <a href="#"><input type="button" value="완료" class="submit-button"
+                style="float:none !important; height: 38px;"></a>
+    </div>
+    
+</form>
+
+
+{%endblock%}
+

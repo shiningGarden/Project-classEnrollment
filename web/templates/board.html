@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block content%}
+<h3>자유게시판</h3>
+<br>
+<br>
+<a href="{%url 'new'%}"><button id="post-button">글 쓰기</button></a>
+<br>
+<br>
+<ul class="list-group list-group-flush" style="text-align: left;">
+    {% for post in posts %}
+    <div class="post-block">
+        <a href="{%url 'detail' post.id%}" class="activated">
+        <li class="list-group-item">
+            <span class="post-title">{{post.title}}</span>
+            <br>
+            <span class="post-body">{{post.summary}}</span>
+        </li></a>
+    </div>
+    {% endfor %}
+</ul>
+<br>
+
+{%endblock%}
+
+
+<input type="submit">
+<button></button>
